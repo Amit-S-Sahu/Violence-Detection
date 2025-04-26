@@ -4,10 +4,10 @@ from tkinter import ttk
 import threading
 from main import start_detection
 
-class PoseDetectionApp:
+class ViolenceDetectionApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Pose Detection")
+        self.root.title("Violence Detection")
         self.root.geometry("400x300")
         self.root.resizable(False, False)
 
@@ -17,7 +17,7 @@ class PoseDetectionApp:
         style.configure("TLabel", font=("Arial", 12))
 
         # Title label
-        self.title_label = ttk.Label(self.root, text="Pose Detection", anchor="center", style="TLabel")
+        self.title_label = ttk.Label(self.root, text="Violence Detection", anchor="center", style="TLabel")
         self.title_label.pack(pady=20)
 
         # Status label
@@ -50,7 +50,7 @@ class PoseDetectionApp:
             self.start_btn.config(text="Start Detection")
 
     def run_detection(self):
-        start_detection()  # Calls the function from main.py for pose detection
+        start_detection()  # Calls the function from main.py for Violence detection
 
     def close_window(self):
         if self.detection_active:
@@ -66,5 +66,5 @@ class PoseDetectionApp:
 
 # Initialize the Tkinter window
 root = tk.Tk()
-app = PoseDetectionApp(root)
+app = ViolenceDetectionApp(root)
 root.mainloop()
